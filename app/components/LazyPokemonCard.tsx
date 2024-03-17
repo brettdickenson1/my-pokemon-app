@@ -33,7 +33,7 @@ const LazyPokemonCard: React.FC<LazyPokemonCardProps> = ({ pokemon }) => {
             alt={pokemon.name}
             width={128}
             height={128}
-            className="transition-opacity opacity-0 duration-[0.5s] w-32 h-32 rounded"
+            className="transition-opacity opacity-0 duration-[0.3s] w-32 h-32 rounded"
             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
           />
           <div className="ml-4">

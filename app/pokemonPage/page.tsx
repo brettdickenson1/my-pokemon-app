@@ -23,6 +23,7 @@ const PokemonDetails = () => {
   const [pokemonStats, setPokemonStats] = useState<PokemonStat[]>([]);
   const [abilities, setAbilities] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [hp, setHp] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -41,6 +42,13 @@ const PokemonDetails = () => {
           (ability: { ability: { name: string } }) => ability.ability.name
         );
         setAbilities(abilitiesNames);
+
+        const hpStat = data.stats.find(
+          (stat: PokemonStat) => stat.stat.name === "hp"
+        );
+        if (hpStat) {
+          setHp(hpStat.base_stat);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -73,7 +81,7 @@ const PokemonDetails = () => {
                     {name && name.charAt(0).toUpperCase() + name.slice(1)}
                   </h1>
                   <div className="flex items-center">
-                    <p className="mr-1">60 HP</p>{" "}
+                    {hp !== null && <p className="mr-1">{hp} HP</p>}
                     <ColorWheelIcon width={20} height={20} />
                   </div>
                 </div>
@@ -84,7 +92,7 @@ const PokemonDetails = () => {
                     alt={name}
                     width={250}
                     height={250}
-                    className="transition-opacity opacity-0 duration-[0.5s] rounded"
+                    className="transition-opacity opacity-0 duration-[0.3s] rounded"
                     onLoadingComplete={(image) =>
                       image.classList.remove("opacity-0")
                     }
