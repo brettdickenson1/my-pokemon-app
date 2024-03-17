@@ -68,13 +68,9 @@ const PokemonDetails = () => {
     >
       <PokemonBanner />
       <Dialog.Root>
-        <Dialog.Trigger>
-          <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-            {loading ? (
-              <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white font-black">
-                Gotta Catch Em All!
-              </p>
-            ) : (
+        {!loading && (
+          <Dialog.Trigger>
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
               <div className="border-yellow-500 bg-white border-8 rounded-lg shadow-md p-6 mb-4 relative">
                 <div className="flex items-center justify-between mb-2">
                   <h1 className="text-2xl font-bold text-center">
@@ -127,9 +123,9 @@ const PokemonDetails = () => {
                     </div>
                   ))}
               </div>
-            )}
-          </div>
-        </Dialog.Trigger>
+            </div>
+          </Dialog.Trigger>
+        )}
       </Dialog.Root>
     </div>
   );

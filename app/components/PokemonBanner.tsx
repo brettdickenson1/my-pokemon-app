@@ -10,7 +10,6 @@ const PokemonBanner: React.FC = () => {
         height: "300px",
         borderRadius: "var(--radius-2)",
         overflow: "hidden",
-        background: "transparent",
       }}
     >
       <Image
