@@ -2,7 +2,7 @@
 import React from "react";
 import PokemonList from "./components/PokemonList";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <main>
       <PokemonList />

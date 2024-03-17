@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
+      "@components/*": ["app/components/*"],
       "@styles/*": ["styles/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -31,7 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/components/PokemonList.tsx",
-    "src/app/page.js"
+    "src/app/page.js",
+    "pages/api_data.js"
   ],
   "exclude": ["node_modules"]
 }
