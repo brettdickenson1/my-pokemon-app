@@ -105,8 +105,8 @@ const PokemonList: React.FC = () => {
         {searchQuery && filteredPokemons.length === 0 && (
           <div className="text-center">
             <p>
-              Sorry no Pokemon's found, please try again or speak to Ash Ketchum
-              for advice 🧐
+              Sorry no Pokemon&apos;s found, please try again or speak to Ash
+              Ketchum for advice 🧐
             </p>
           </div>
         )}
@@ -116,7 +116,7 @@ const PokemonList: React.FC = () => {
             fallback={
               <div className="flex items-center">
                 <p className="flex-grow">
-                  Catching Pokemon, won't be a minute!
+                  Catching Pokemon, won&apos;t be a minute!
                 </p>
               </div>
             }

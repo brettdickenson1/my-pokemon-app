@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Pokemon {
   name: string;
@@ -27,9 +28,11 @@ const LazyPokemonCard: React.FC<LazyPokemonCardProps> = ({ pokemon }) => {
         }}
       >
         <div className="flex items-center">
-          <img
+          <Image
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
             alt={pokemon.name}
+            width={128}
+            height={128}
             className="w-32 h-32 rounded"
           />
           <div className="ml-4">
