@@ -84,7 +84,10 @@ const PokemonDetails = () => {
                     alt={name}
                     width={250}
                     height={250}
-                    className="rounded"
+                    className="transition-opacity opacity-0 duration-[0.5s] rounded"
+                    onLoadingComplete={(image) =>
+                      image.classList.remove("opacity-0")
+                    }
                   />
                 </div>
 
