@@ -125,7 +125,7 @@ const PokemonDetails = () => {
 };
 
 const SuspensePokemonDetails = () => (
-  <Suspense fallback={<div>Loading Pokemon details...</div>}>
+  <Suspense>
     <PokemonDetails />
   </Suspense>
 );
